@@ -42,3 +42,18 @@ As principais palavras-chave para lidar com exceções em Java são: **try, catc
 ### 4. O que é o bloco "try-catch" em Java? Como ele funciona e por que é importante usá-lo ao lidar com exceções?
 
 O bloco try-catch é usado para envolver um trecho de código onde uma exceção pode acontecer. O bloco try contém o código suscetível a lançar uma exceção, enquanto o bloco catch contém o código para lidar com a exceção se ou quando ela ocorrer. É importante usar try-catch ao lidar com exceções para garantir que o programa possa se recuperar após situações excepcionais, mantendo uma execução controlada e evitando a interrupção abrupta do programa.
+
+### 5. Quando é apropriado criar suas próprias exceções personalizadas em Java e como você pode fazer isso? Dê um exemplo de quando e por que você criaria uma exceção personalizada.
+
+É mais correto criar exceções personalizadas quando nós estamos lidando com situações específicas do seu domínio de aplicação, onde não são bem representadas pelas exceções padrão do Java. Isso pode tornar o código mais legível e facilitar sua manutenção. Para criar uma exceção personalizada, geralmente estendemos a classe Exception ou suas subclasses. Como no exemplo a seguir:
+
+```java
+
+public class MinhaExcecaoPersonalizada extends Exception {
+    public MinhaExcecaoPersonalizada(String mensagem) {
+        super(mensagem);
+    }
+}
+```
+
+Criariamos uma exceção personalizada quando estivermos desenvolvendo uma aplicação financeira e quisermos lidar com situações específicas, como "Saldo Insuficiente" ao tentar realizar uma transação. Isso iria proporcionar uma semântica mais clara e facilitaria o entendimento do código por outros desenvolvedores, por exemplo.
